@@ -1,0 +1,66 @@
+:root {
+    --main-size: 40px;
+}
+
+#map {
+    position: relative;
+    z-index: -1;
+}
+
+#player {
+    
+width:100%;
+height:100%;
+background-image: url("sokobanPlayer.png");
+background-size: contain;
+
+}
+
+ .row {
+display: flex;
+/* justify-content: center; */
+} 
+
+.wall{
+  width:var(--main-size);
+  height:var(--main-size);
+  background-color: beige;
+}
+#start{
+    width:var(--main-size);
+    height:var(--main-size);
+    background-color:green;
+}
+.finish{
+    width:var(--main-size);
+    height:var(--main-size);
+    background-color:yellow;
+}
+
+.space{
+    width:var(--main-size);
+    height:var(--main-size);
+    
+}
+
+.box{
+    width:var(--main-size);
+    height:var(--main-size);
+    background-color: brown;
+}
+
+button {
+    background-color: deepskyblue;
+}
+
+.open {
+    width:var(--main-size);
+    height:var(--main-size);
+    background-color: aquamarine;
+}
+
+.end {
+    width:var(--main-size);
+    height:var(--main-size);
+    background-color: yellow;
+}
