@@ -1,66 +1,181 @@
+/* Root variables for main size */
 :root {
-    --main-size: 40px;
+    --main-size: 50px;
 }
 
+/* General styles for the body */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f0f0f0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+    padding: 10px;
+    color: #333;
+}
+
+/* Styles for the heading */
+h1 {
+    color: #333;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+/* Styles for the game board */
 #map {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     position: relative;
-    z-index: -1;
+    z-index: 1;
+    margin-bottom: 20px;
+    background-color: #fff;
+    padding: 10px;
+    border: 2px solid #ccc;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
+/* Styles for the player */
 #player {
-    
-width:100%;
-height:100%;
-background-image: url("sokobanPlayer.png");
-background-size: contain;
-
+    width: var(--main-size);
+    height: var(--main-size);
+    background-image: url("sokobanPlayer.png");
+    background-size: contain;
+    position: absolute;
+    transition: all 0.3s ease;
 }
 
- .row {
-display: flex;
-/* justify-content: center; */
-} 
-
-.wall{
-  width:var(--main-size);
-  height:var(--main-size);
-  background-color: beige;
-}
-#start{
-    width:var(--main-size);
-    height:var(--main-size);
-    background-color:green;
-}
-.finish{
-    width:var(--main-size);
-    height:var(--main-size);
-    background-color:yellow;
+/* Styles for the rows in the game board */
+.row {
+    display: flex;
 }
 
-.space{
-    width:var(--main-size);
-    height:var(--main-size);
-    
+/* Styles for the wall cells */
+.wall {
+    width: var(--main-size);
+    height: var(--main-size);
+    background-color: #8b8b8b; /* Modern gray color for the walls */
 }
 
-.box{
-    width:var(--main-size);
-    height:var(--main-size);
-    background-color: brown;
+/* Styles for the start cell */
+#start {
+    width: var(--main-size);
+    height: var(--main-size);
+    background-color: #4caf50; /* Modern green color for the start */
 }
 
-button {
-    background-color: deepskyblue;
+/* Styles for the finish cell */
+.finish {
+    width: var(--main-size);
+    height: var(--main-size);
+    background-color: #ffeb3b; /* Modern yellow color for the finish */
 }
 
+/* Styles for the space cells */
+.space {
+    width: var(--main-size);
+    height: var(--main-size);
+    background-color: #ffffff; /* White color for the space */
+}
+
+/* Styles for the box cells */
+.box {
+    width: var(--main-size);
+    height: var(--main-size);
+    background-color: #795548; /* Modern brown color for the boxes */
+}
+
+/* Styles for the open cells */
 .open {
-    width:var(--main-size);
-    height:var(--main-size);
-    background-color: aquamarine;
+    width: var(--main-size);
+    height: var(--main-size);
+    background-color: #00bcd4; /* Modern cyan color for the open cells */
 }
 
+/* Styles for the end cells */
 .end {
-    width:var(--main-size);
-    height:var(--main-size);
-    background-color: yellow;
+    width: var(--main-size);
+    height: var(--main-size);
+    background-color: #ffeb3b; /* Modern yellow color for the end cells */
+}
+
+/* Styles for the button */
+button {
+    background-color: #2196f3;
+    padding: 10px 20px;
+    font-size: 1rem;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-top: 20px;
+    align-self: center;
+}
+
+button:hover {
+    background-color: #1976d2;
+}
+
+/* Styles for the win message */
+.win-message {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(0, 0, 0, 0.8);
+    color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    font-size: 2rem;
+    text-align: center;
+    z-index: 1000;
+}
+
+/* Responsive styles for screens smaller than 600px */
+@media (max-width: 600px) {
+    #map {
+        transform: scale(0.8);
+    }
+
+    #player {
+        width: 40px;
+        height: 40px;
+    }
+
+    .wall, .space, #start, .finish, .box, .open, .end {
+        width: 40px;
+        height: 40px;
+    }
+
+    button {
+        padding: 8px 16px;
+        font-size: 0.9rem;
+    }
+}
+
+/* Responsive styles for screens smaller than 400px */
+@media (max-width: 400px) {
+    #map {
+        transform: scale(0.6);
+    }
+
+    #player {
+        width: 30px;
+        height: 30px;
+    }
+
+    .wall, .space, #start, .finish, .box, .open, .end {
+        width: 30px;
+        height: 30px;
+    }
+
+    button {
+        padding: 6px 12px;
+        font-size: 0.8rem;
+    }
 }

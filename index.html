@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,16 +7,17 @@
     <title>Sokoban</title>
     <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
     <h1>SOKOBAN</h1>
+    <!-- Game board container -->
     <div id="map">
+        <!-- Player element -->
         <div id="player"></div>
-        <div id="crate"></div>
     </div>
-    <div id="msgDiv"></div>
+    <!-- Win message container -->
+    <div id="winMessage" class="win-message" style="display: none;">YOU WIN</div>
+    <!-- Reset button to restart the game -->
     <button id="replayButton">Replay</button>
     <script src="main.js"></script>
 </body>
-
 </html>
